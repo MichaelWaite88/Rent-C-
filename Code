@@ -2,26 +2,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
- 
+
 namespace check1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double rent;
-            Console.Write("How much do you owe for rent: ");
-            rent = double.Parse(Console.ReadLine());
-            double cable;
-            Console.Write("How much do you owe for cable: ");
-            cable = double.Parse(Console.ReadLine());
-            double electric;
-            Console.Write("How much do you owe for electricity: ");
-            electric = double.Parse(Console.ReadLine());
-            double total;
-            total = rent + cable + electric;
-            Console.Write("You owe: $" + total);
-
+            decimal roommates;
+            Console.Write("How many roommates do you have? ");
+            roommates = decimal.Parse(Console.ReadLine());
+            decimal rent;
+            Console.Write("What is the total owed for rent: ");
+            rent = decimal.Parse(Console.ReadLine());
+            decimal cable;
+            Console.Write("How much is owed for cable: ");
+            cable = decimal.Parse(Console.ReadLine());
+            decimal electric;
+            Console.Write("How much is owed for electricity: ");
+            electric = decimal.Parse(Console.ReadLine());
+            decimal total;
+            total = (rent + cable + electric)/roommates;
+            total = Math.Round(total, 2);
+            Console.WriteLine("Each roommate owes: ${0}", total);
+            Console.WriteLine("Press enter to close.");
+            Console.ReadLine();
 
         }
     }
